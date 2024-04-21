@@ -5,8 +5,6 @@ using UnityEngine;
 public class CheckPoint : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("CheckPoint hors voiture !");
-        Debug.Log(other.gameObject);
         if (other.TryGetComponent<CarController>(out CarController carController)) {
             Debug.Log("CheckPoint !");
         }

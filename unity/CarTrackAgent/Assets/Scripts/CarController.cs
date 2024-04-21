@@ -25,7 +25,8 @@ public class CarController : Agent {
     [SerializeField] private Transform frontLeftWheelTransform, frontRightWheelTransform;
     [SerializeField] private Transform rearLeftWheelTransform, rearRightWheelTransform;
 
-    [SerializeField] private CheckPoint trackCheckpoints;
+    [SerializeField] private Transform spawnPosition;
+    [SerializeField] private TrackCheckPoints trackCheckpoints;
 
     private void FixedUpdate() {
         GetInput();
