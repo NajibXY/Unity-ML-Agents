@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CarController : MonoBehaviour {
     private float horizontalInput, verticalInput;
@@ -79,8 +80,11 @@ public class CarController : MonoBehaviour {
             //SetReward(1f);
             //floorMeshRenderer.material = winMaterial;
             //EndEpisode();
-            transform.localPosition = new Vector3(768.30f, 4.99f, 397.386f);
-            transform.localRotation = new Quaternion(0, 175.566f, 0, 0);
+
+            //transform.localPosition = new Vector3(768.30f, 4.99f, 397.386f);
+            //transform.localRotation = new Quaternion(0, 175.566f, 0, 0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
             //currentSteerAngle = 0;
             //currentbreakForce = 0;
             //frontRightWheelCollider.brakeTorque = 20000;
@@ -93,5 +97,11 @@ public class CarController : MonoBehaviour {
             HandleSteering();
             UpdateWheels();
         } 
+    }
+
+    public void SetInputs(float forwardAmount, float turnAmount) {
+        currentSteerAngle = maxSteerAngle * turnAmount;
+        frontLeftWheelCollider.motorTorque = forwardAmount * motorForce;
+        frontRightWheelCollider.motorTorque = forwardAmount * motorForce;
     }
 }
