@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CarController : MonoBehaviour {
@@ -70,5 +72,26 @@ public class CarController : MonoBehaviour {
         wheelCollider.GetWorldPose(out pos, out rot);
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.TryGetComponent<FencePanel>(out _)) {
+            //SetReward(1f);
+            //floorMeshRenderer.material = winMaterial;
+            //EndEpisode();
+            transform.localPosition = new Vector3(768.30f, 4.99f, 397.386f);
+            transform.localRotation = new Quaternion(0, 175.566f, 0, 0);
+            //currentSteerAngle = 0;
+            //currentbreakForce = 0;
+            //frontRightWheelCollider.brakeTorque = 20000;
+            //frontLeftWheelCollider.brakeTorque = 20000;
+            //rearLeftWheelCollider.brakeTorque = 20000;
+            //rearRightWheelCollider.brakeTorque = 20000;
+            //frontLeftWheelCollider.motorTorque = 0;
+            //frontRightWheelCollider.motorTorque = 0;
+            HandleMotor();
+            HandleSteering();
+            UpdateWheels();
+        } 
     }
 }
