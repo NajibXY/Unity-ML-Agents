@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 942762337184432749}
   - component: {fileID: 1843791507459435765}
   - component: {fileID: 5759122636860876149}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FencePanel
-  m_TagString: Untagged
+  m_TagString: FencePanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 7062232527320352757}
   - component: {fileID: 4002610916099586418}
   - component: {fileID: 1657122848567159158}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 1560412939214884620}
   - component: {fileID: 9094583152949287899}
   - component: {fileID: 7772849245990288556}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 7405549215014256857}
   - component: {fileID: 7489269887023944317}
   - component: {fileID: 271618003626667083}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

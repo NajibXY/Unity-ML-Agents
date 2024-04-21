@@ -3,16 +3,50 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - agent
+  - ground
+  - symbol_O
+  - target
+  - stone
+  - pyramid
+  - ex
+  - goal
+  - block
+  - wall
+  - symbol_O_Goal
+  - symbol_X_Goal
+  - symbol_X
+  - key
+  - walkableSurface
+  - blueGoal
+  - purpleGoal
+  - purpleAgent
+  - blueAgent
+  - ball
+  - badFood
+  - food
+  - blockLarge
+  - blockSmall
+  - blockVeryLarge
+  - lock
+  - dragon
+  - portal
+  - tile
+  - switchOff
+  - plus
+  - FencePanel
+  - CheckPoint
+  - Car
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Car
   - Water
   - UI
-  - 
-  - 
+  - CheckPoint
+  - FencePanel
   - 
   - 
   - 
