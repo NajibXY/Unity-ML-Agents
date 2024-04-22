@@ -4,33 +4,41 @@ using UnityEngine;
 
 public class TrackCheckPoints : MonoBehaviour {
 
+    [SerializeField] private List<Transform> carTransformList;
     private List<CheckPoint> checkPoints;  
-    private int nextCheckPointIndex;
+    private List<int> nextCheckPointIndexList;
 
     private void Awake() {
-        nextCheckPointIndex = 0;
         checkPoints = new List<CheckPoint>();
+        // Initialize CPs
         Transform checkpointsTransform = transform.Find("CheckPoints");
-        Debug.Log(checkpointsTransform);
         foreach (Transform checkpointSingleTransform in checkpointsTransform) {
             CheckPoint cp = checkpointSingleTransform.GetComponent<CheckPoint>();
             cp.SetTrackCheckPoints(this);
             checkPoints.Add(cp);
         }
+        // Initialize Cars
+        nextCheckPointIndexList = new List<int>();
+        foreach (Transform carTransform in carTransformList) {
+            nextCheckPointIndexList.Add(0);
+        }
     }
 
-    public void CheckpointReached(CheckPoint cp) {
+    public void CarReachedCheckpoint(CheckPoint cp, Transform carTransform) {
+        int nextCheckPointIndex = nextCheckPointIndexList[carTransformList.IndexOf(carTransform)];
         if (checkPoints.IndexOf(cp) == nextCheckPointIndex) {
             Debug.Log("Correct checkpoint reached");
-            nextCheckPointIndex++;
+            //todo Good reward
+            nextCheckPointIndexList[carTransformList.IndexOf(carTransform)] = nextCheckPointIndex + 1;
         } else {
-            //todo ? Penalize reward
+            //todo Penalize reward
             Debug.Log("Incorrect checkpoint reached");
         }
         // Reset
         if (nextCheckPointIndex.CompareTo(checkPoints.Count) == 0) {
             Debug.Log("Lap completed");
-            nextCheckPointIndex = 0;
+            //todo Success episode
+            nextCheckPointIndexList[carTransformList.IndexOf(carTransform)] =  0;
         }
     }
 }
