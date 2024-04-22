@@ -29,16 +29,27 @@ public class TrackCheckPoints : MonoBehaviour {
         if (checkPoints.IndexOf(cp) == nextCheckPointIndex) {
             Debug.Log("Correct checkpoint reached");
             //todo Good reward
+            carTransform.gameObject.GetComponent<CarController>().AddReward(1f);
             nextCheckPointIndexList[carTransformList.IndexOf(carTransform)] = nextCheckPointIndex + 1;
         } else {
             //todo Penalize reward
+            carTransform.gameObject.GetComponent<CarController>().AddReward(-1f);
             Debug.Log("Incorrect checkpoint reached");
         }
         // Reset
         if (nextCheckPointIndex.CompareTo(checkPoints.Count) == 0) {
             Debug.Log("Lap completed");
             //todo Success episode
+            carTransform.gameObject.GetComponent<CarController>().SetReward(10f);
             nextCheckPointIndexList[carTransformList.IndexOf(carTransform)] =  0;
         }
+    }
+
+    public void ResetNextCheckpoint(Transform carTransform) {
+        nextCheckPointIndexList[carTransformList.IndexOf(carTransform)] = 0;
+    }
+
+    public CheckPoint GetNextCheckpoint(Transform carTransform) {
+        return checkPoints[nextCheckPointIndexList[carTransformList.IndexOf(carTransform)]];
     }
 }
