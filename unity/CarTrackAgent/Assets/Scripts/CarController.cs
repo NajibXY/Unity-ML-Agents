@@ -122,6 +122,7 @@ public class CarController : Agent {
     // Learning Functions
 
     public override void OnEpisodeBegin() {
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         transform.position = spawnPosition.position + new Vector3(UnityEngine.Random.Range(-2f, +2f), 0, UnityEngine.Random.Range(-2f, 0f));
         transform.forward = spawnPosition.forward;
         transform.rotation = spawnPosition.rotation;
@@ -236,7 +237,7 @@ public class CarController : Agent {
     private void OnCollisionEnter(Collision collision) {
         Debug.Log(collision.gameObject);
         if (collision.gameObject.TryGetComponent<FencePanel>(out _)) {
-            AddReward(-0.5f);
+            AddReward(-1f);
             Debug.Log("Enter fence");
             //EndEpisode();
         }
@@ -246,7 +247,7 @@ public class CarController : Agent {
         Debug.Log(collision.gameObject);
         if (collision.gameObject.TryGetComponent<FencePanel>(out _)) {
             Debug.Log("Stay fence");
-            AddReward(-0.1f);
+            AddReward(-0.2f);
         }
     }
 

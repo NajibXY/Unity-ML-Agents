@@ -17,7 +17,7 @@ Works fine! Hope so u too :D
 
 
 
-
+mlagents-learn config_custom/car_imitation.yaml --run-id=imitation_car_test_01 
 mlagents-learn ml-agents/config/ppo/PushBlock.yaml --run-id=push_block_test_03
 
 https://unityatscale.com/unity-version-control-guide/how-to-setup-unity-project-on-github/

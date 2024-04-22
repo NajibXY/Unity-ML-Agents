@@ -2,22 +2,22 @@
     "CarController": {
         "checkpoints": [
             {
-                "steps": 3600,
-                "file_path": "results\\ppo\\CarController\\CarController-3600.onnx",
-                "reward": -55.00499207178752,
-                "creation_time": 1713818189.2911298,
+                "steps": 15600,
+                "file_path": "results\\ppo\\CarController\\CarController-15600.onnx",
+                "reward": -30.34374118298292,
+                "creation_time": 1713818518.1536896,
                 "auxillary_file_paths": [
-                    "results\\ppo\\CarController\\CarController-3600.pt"
+                    "results\\ppo\\CarController\\CarController-15600.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 3600,
+            "steps": 15600,
             "file_path": "results\\ppo\\CarController.onnx",
-            "reward": -55.00499207178752,
-            "creation_time": 1713818189.2911298,
+            "reward": -30.34374118298292,
+            "creation_time": 1713818518.1536896,
             "auxillary_file_paths": [
-                "results\\ppo\\CarController\\CarController-3600.pt"
+                "results\\ppo\\CarController\\CarController-15600.pt"
             ]
         }
     },

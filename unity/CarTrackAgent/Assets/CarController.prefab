@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 570631753066572883}
   - component: {fileID: 2989810966050186796}
   - component: {fileID: 9016126769963084163}
+  - component: {fileID: 6886324682216790931}
   m_Layer: 3
   m_Name: CarController
   m_TagString: Untagged
@@ -192,7 +193,7 @@ MonoBehaviour:
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
-  m_BehaviorType: 0
+  m_BehaviorType: 1
   m_BehaviorName: CarController
   TeamId: 0
   m_UseChildSensors: 1
@@ -312,6 +313,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.85, y: 0.93, z: 4.34}
   m_Center: {x: 0, y: 0.85, z: -0.018977284}
+--- !u!114 &6886324682216790931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2663496807153214539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2902496c0120472b90269f94a0aec7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Record: 1
+  NumStepsToRecord: 0
+  DemonstrationName: turnRightCircuit
+  DemonstrationDirectory: Demos
 --- !u!1 &2938448679791835015
 GameObject:
   m_ObjectHideFlags: 0
