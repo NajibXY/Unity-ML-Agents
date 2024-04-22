@@ -47,9 +47,15 @@ public class CarController : Agent {
     }
 
     private void HandleMotor() {
-        frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
-        frontRightWheelCollider.motorTorque = verticalInput * motorForce;
-        currentbreakForce = isBreaking ? breakForce : 0f;
+        if (verticalInput == 0) {
+            currentbreakForce = breakForce*2;
+        } else {
+            currentbreakForce = 0f;
+            frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
+            frontRightWheelCollider.motorTorque = verticalInput * motorForce;
+        }
+        //todo enhance breaking
+        currentbreakForce = isBreaking ? (breakForce*3) : currentbreakForce;
         ApplyBreaking();
     }
 
