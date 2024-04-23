@@ -1,0 +1,65 @@
+{
+    "CarController": {
+        "checkpoints": [
+            {
+                "steps": 3499948,
+                "file_path": "results\\imitation_car_test_19\\CarController\\CarController-3499948.onnx",
+                "reward": -76.92632642545198,
+                "creation_time": 1713863662.3360202,
+                "auxillary_file_paths": [
+                    "results\\imitation_car_test_19\\CarController\\CarController-3499948.pt"
+                ]
+            },
+            {
+                "steps": 3999948,
+                "file_path": "results\\imitation_car_test_19\\CarController\\CarController-3999948.onnx",
+                "reward": -77.35790506162141,
+                "creation_time": 1713864489.8512185,
+                "auxillary_file_paths": [
+                    "results\\imitation_car_test_19\\CarController\\CarController-3999948.pt"
+                ]
+            },
+            {
+                "steps": 4499948,
+                "file_path": "results\\imitation_car_test_19\\CarController\\CarController-4499948.onnx",
+                "reward": -83.9333443916761,
+                "creation_time": 1713865329.7431076,
+                "auxillary_file_paths": [
+                    "results\\imitation_car_test_19\\CarController\\CarController-4499948.pt"
+                ]
+            },
+            {
+                "steps": 4999948,
+                "file_path": "results\\imitation_car_test_19\\CarController\\CarController-4999948.onnx",
+                "reward": -88.95790604541176,
+                "creation_time": 1713866186.6680524,
+                "auxillary_file_paths": [
+                    "results\\imitation_car_test_19\\CarController\\CarController-4999948.pt"
+                ]
+            },
+            {
+                "steps": 5001280,
+                "file_path": "results\\imitation_car_test_19\\CarController\\CarController-5001280.onnx",
+                "reward": -100.96001247167587,
+                "creation_time": 1713866188.4780457,
+                "auxillary_file_paths": [
+                    "results\\imitation_car_test_19\\CarController\\CarController-5001280.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 5001280,
+            "file_path": "results\\imitation_car_test_19\\CarController.onnx",
+            "reward": -100.96001247167587,
+            "creation_time": 1713866188.4780457,
+            "auxillary_file_paths": [
+                "results\\imitation_car_test_19\\CarController\\CarController-5001280.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.2.2+cu118"
+    }
+}
