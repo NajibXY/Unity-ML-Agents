@@ -26,9 +26,15 @@ public class CarController : Agent {
     [SerializeField] private Transform rearLeftWheelTransform, rearRightWheelTransform;
 
     //// Learning data
-    [SerializeField] private Transform spawnPosition;
     [SerializeField] private TrackCheckPoints trackCheckpoints;
 
+    private Transform initialPosition;
+
+    private void Awake() {
+        initialPosition = transform;
+        Debug.Log(initialPosition.position.x);
+        Debug.Log(initialPosition.position.y);
+    }
 
     private void FixedUpdate() {
         //GetInput();
@@ -123,9 +129,14 @@ public class CarController : Agent {
 
     public override void OnEpisodeBegin() {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        transform.position = spawnPosition.position + new Vector3(UnityEngine.Random.Range(-2f, +2f), 0, UnityEngine.Random.Range(-2f, 0f));
-        transform.forward = spawnPosition.forward;
-        transform.rotation = spawnPosition.rotation;
+        //transform.position = initialPosition.position + new Vector3(UnityEngine.Random.Range(-2f, +2f), 0, UnityEngine.Random.Range(-2f, 0f));
+        transform.forward = initialPosition.forward;
+        transform.rotation = initialPosition.rotation;
+        transform.position = new Vector3(768.3075f, 4.999092f, 397.386f);
+        Debug.Log("Episode Begin");
+        Debug.Log(transform.position.x);
+        Debug.Log(transform.position.y);
+        Debug.Log(transform.position.z);
         trackCheckpoints.ResetNextCheckpoint(transform);
         //stop the car
         StopCar();
@@ -240,6 +251,12 @@ public class CarController : Agent {
             AddReward(-1f);
             Debug.Log("Enter fence");
             //EndEpisode();
+        }
+        else if (collision.gameObject.TryGetComponent<Terrain>(out _)) {
+            transform.forward = initialPosition.forward;
+            transform.rotation = initialPosition.rotation;
+            transform.position = new Vector3(768.3075f, 4.999092f, 397.386f);
+            EndEpisode();
         }
     }
 

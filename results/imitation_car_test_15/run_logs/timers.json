@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1713830235",
+        "python_version": "3.9.13 (main, Oct 13 2022, 21:23:06) [MSC v.1916 64 bit (AMD64)]",
+        "command_line_arguments": "V:\\outils_dev\\envs\\mlagents\\Scripts\\mlagents-learn --run-id=imitation_car_test_15",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "2.2.2+cu118",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1713830244"
+    },
+    "total": 9.0818024,
+    "count": 1,
+    "self": 0.0029726000000032116,
+    "children": {
+        "run_training.setup": {
+            "total": 0.023365400000000314,
+            "count": 1,
+            "self": 0.023365400000000314
+        },
+        "TrainerController.start_learning": {
+            "total": 9.055464399999998,
+            "count": 1,
+            "self": 0.00024989999999824875,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 9.0551961,
+                    "count": 1,
+                    "self": 9.0551961
+                },
+                "TrainerController._save_models": {
+                    "total": 1.8400000000085015e-05,
+                    "count": 1,
+                    "self": 1.8400000000085015e-05
+                }
+            }
+        }
+    }
+}
