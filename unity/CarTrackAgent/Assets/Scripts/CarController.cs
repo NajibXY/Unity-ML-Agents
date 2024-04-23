@@ -131,7 +131,7 @@ public class CarController : Agent {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //transform.position = initialPosition.position + new Vector3(UnityEngine.Random.Range(-2f, +2f), 0, UnityEngine.Random.Range(-2f, 0f));
         transform.forward = initialPosition.forward;
-        transform.rotation = initialPosition.rotation;
+        transform.rotation = new Quaternion(0, 175.566f, 0, 0);
         transform.position = new Vector3(768.3075f, 4.999092f, 397.386f);
         Debug.Log("Episode Begin");
         Debug.Log(transform.position.x);
@@ -254,7 +254,7 @@ public class CarController : Agent {
         }
         else if (collision.gameObject.TryGetComponent<Terrain>(out _)) {
             transform.forward = initialPosition.forward;
-            transform.rotation = initialPosition.rotation;
+            transform.rotation = new Quaternion(0, 175.566f, 0, 0);
             transform.position = new Vector3(768.3075f, 4.999092f, 397.386f);
             EndEpisode();
         }
