@@ -8,7 +8,7 @@
   <img align="right" src="https://github.com/NajibXY/Unity-ML-Agents/blob/master/assets/gifs/car_controller_agent/advanced_training.gif" width="400">
 </figure>
 
-Afin de monter en compétence sur Unity et en Machine Learning, j'ai décidé de monter un projet de diverses expérimentations dans des environnements d'apprentissage par renforcement
+Afin de monter en compétences sur Unity et en Machine Learning, j'ai décidé de monter un projet de diverses expérimentations dans des environnements d'apprentissage par renforcement
 que je conçois en parallèle dans le moteur Unity.
 </br>
 Cela implique plusieurs axes de développement :
@@ -47,7 +47,7 @@ Ainsi qu'un objectif à court terme : développer un agent capable de controller
 ### Préparation de la Scène
 
 - L'important avec les scénarios d'apprentissage c'est de concevoir un environnement adapté.
-- Pour l'agent dont le but est d'atteindre sa cible, la scène a été conçue, à partir d'un exemple de la bibliothèque ML-Agents, de manière a avoir un prefab controllable `Basic` dont le but est d'atteindre une balle, dans un environnement cloîsonné.
+- Pour l'agent dont le but est d'atteindre sa cible, la scène a été conçue, à partir d'un exemple de la bibliothèque ML-Agents, de manière a avoir un prefab controllable `Basic` dont le but est d'atteindre une balle, dans un environnement cloisonné.
 - Dans le contexte de l'apprentissage l'agent peut se déplacer à sa guise dans l'environnement sur l'axe <X,Z>. Il reçoit une récompense négative (e.g positive) et l'épisode d'apprentissage se termine quand l'agent rentre en contact avec les murs (e.g la balle).
 - La logique de l'implémentation de l'agent est possible grâce à l'interface `Agent` des classes C# de la bibliothèque ML-Agent.
 - Le script à rattacher à l'agent est consultable ici [MoveToGoalBasic.cs](https://github.com/NajibXY/Unity-ML-Agents/blob/master/unity/MLAgentsTests/Assets/Scripts/MoveToGoalBasic.cs)
@@ -79,7 +79,7 @@ A partir de quelques milliers d'étapes, l'agent applique une heuristique qui se
 Après quelques dizaines de milliers d'étapes d'apprentissage, l'agent a développé une solide stratégie et a appris à maitriser le déplacement vers l'objectif.
 
 ### Résultats
-- Le résulat est exporté dans un dossier [results](https://github.com/NajibXY/Unity-ML-Agents/tree/master/results).
+- Le  est exporté dans un dossier [results](https://github.com/NajibXY/Unity-ML-Agents/tree/master/results).
 - Le dossier de résultat comporte énormément d'informations qu'on peut visualiser grâce à `Tensorboard` ainsi qu'un [Brain](https://github.com/NajibXY/Unity-ML-Agents/blob/master/results/MoveToGoalWithParametersAndRandomization_03/MoveToGoalBasic.onnx) importable dans les assets Unity et utilisable dans les composants de l'agent.
 - En chargeant le fichier `.onnx` dans le modèle utilisé par l'agent et en mettant le comportement à `Inference only`, on peut observer un comportement parfaitement automatisé et réutilisable :
 <img src="https://github.com/NajibXY/Unity-ML-Agents/blob/master/assets/gifs/reach_the_goal_agent/trained_brain.gif" width="650">
@@ -106,7 +106,7 @@ Après quelques dizaines de milliers d'étapes d'apprentissage, l'agent a dével
 ### Préparation de l'apprentissage
 
 - Comme précédemment, une fois que votre scène est adaptée à l'apprentissage, nous pouvons cloner l'environnement plusieurs fois pour avoir plusieurs environnements participants en parallèle et ainsi décupler la vitesse d'apprentissage. Sauf qu'ici, nous allons simplement décupler le `CarController` pour avoir plusieurs voitures qui intéragissent avec le même environnement.
-- Il faut bien veiller à désactiver les collisions entre les voitures, notre objectif se rapprochant plus d'un bot TrackMania que Forza.
+- Il faut bien veiller à désactiver les collisions entre les voitures, mon objectif se rapprochant plus d'un bot TrackMania que F1.
 
 ### Utilisation d'un Demonstration Recorder
 
@@ -129,30 +129,30 @@ Au début l'agent apprend tâtonne, apprend à avancer, à reculer et bouge dans
 
 #### Après 100 000 étapes
 <img src="https://github.com/NajibXY/Unity-ML-Agents/blob/master/assets/gifs/car_controller_agent/after_begin_training.gif" width="650">
-A partir de quelques 100 000 étapes, l'agent a presque appris à cibler les premiers checkpoints.
+A partir de quelques centaines de milliers étapes, l'agent a presque appris à cibler les premiers checkpoints.
 
 #### Après 500 000 étapes
 <img src="https://github.com/NajibXY/Unity-ML-Agents/blob/master/assets/gifs/car_controller_agent/mid_training.gif" width="650">
-Après quelques centaines de milliers d'étapes d'apprentissage, l'agent commence à bien reconnaître son objectif et à faire des tours. Certains agents font des tours en sens inverse, d'autres se crashent,
+Après quelques centaines de milliers d'étapes d'apprentissage, l'agent commence à bien reconnaître son objectif et à compléter des tours. Certains agents font des tours en sens inverse, d'autres se crashent,
 ce qui rassure par rapport à la propagation du bruit dans le modèle.
 
 #### Après 1 500 000 étapes
 <img src="https://github.com/NajibXY/Unity-ML-Agents/blob/master/assets/gifs/car_controller_agent/advanced_training.gif" width="650">
-Après plus d'un million d'étapes d'apprentissage, l'agent est fluide dans le circuit. Il a appris à faire des tours !
+Après plus d'un million d'étapes d'apprentissage, l'agent se déplace fluidement dans le circuit. Il a appris à faire des tours !
 
 #### Observation
-Au delà de 2 000 000 d'étapes, l'agent passe dans une phase bizarre de surapprentissage où il "régresse" et les comportements observés sont tout autant intriguants que néfastes pour le résultat final. 
+Au-delà de 2 000 000 d'étapes, l'agent passe dans une phase bizarre de surapprentissage où il "régresse" et les comportements observés sont tout autant intriguants que néfastes pour le résultat final. 
 D'autres expérimentations seront menées pour mieux comprendre cela, même si c'est une limitation classique des algorithmes d'apprentissage par renforcement.
 
 
 ### Résultats
-- Le résulat est exporté dans un dossier [results](https://github.com/NajibXY/Unity-ML-Agents/tree/master/results).
+- Le résultat est exporté dans un dossier [results](https://github.com/NajibXY/Unity-ML-Agents/tree/master/results).
 - Le dossier de résultat comporte énormément d'informations qu'on peut visualiser grâce à `Tensorboard` ainsi qu'un [CarControllerBrain](https://github.com/NajibXY/Unity-ML-Agents/blob/master/results/imitation_car_test_20/CarController/CarController-1499948.onnx) importable dans les assets Unity et utilisable dans les composants de l'agent.
 - En chargeant le fichier `.onnx` dans le modèle utilisé par l'agent et en mettant le comportement à `Inference only`, on peut observer un comportement parfaitement automatisé et réutilisable :
 <img src="https://github.com/NajibXY/Unity-ML-Agents/blob/master/assets/gifs/car_controller_agent/trained_brain_demo_game.gif" width="650">
 
 ### Objectif 
-- L'objectif actuel étant de développer un agent capable de conduire sur n'importe quelle circuit sur Unity (tant que le script de l'agent expose certaines fonctions nécessaires du package ML-Agent), il faut
+- L'objectif actuel étant de développer un agent capable de conduire sur n'importe quel circuit sur Unity (tant que le script de l'agent expose certaines fonctions nécessaires du package ML-Agent), il faut
 que je réalise l'apprentissage sur plusieurs types de circuits en même temps afin d'avoir un agent résultant adaptatif.
 - Affaire à suivre !
 <img src="https://github.com/NajibXY/Unity-ML-Agents/blob/master/assets/gifs/car_controller_agent/trained_brain_demo_scene.gif" width="650">
